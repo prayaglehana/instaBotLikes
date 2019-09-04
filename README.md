@@ -1,5 +1,6 @@
 # instaBotLikes
-Motive : Gain Followers On Insta
+** Motive :
+Gain Followers On Insta
 automates instagram and let you follow thousands of people withing minutes , 
 for which you can get follow back.
 
