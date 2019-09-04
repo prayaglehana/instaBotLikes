@@ -11,9 +11,9 @@ webdriver.get('https://www.instagram.com/accounts/login/?source=auth_switcher')
 sleep(3)
 
 username = webdriver.find_element_by_name('username')
-username.send_keys('type your username here')
+username.send_keys('prayaglehana')
 password = webdriver.find_element_by_name('password')
-password.send_keys('type your password here')
+password.send_keys('mynameiskhan')
 
 button_login = webdriver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/article/div/div[1]/div/form/div[4]/button/div')
 button_login.click()
@@ -41,27 +41,32 @@ for hashtag in hashtag_list:
     first_thumbnail = webdriver.find_element_by_xpath('//*[@id="react-root"]/section/main/article/div[1]/div/div/div[1]/div[1]/a/div')
     
     first_thumbnail.click()
-    sleep(randint(1,2))    
-    try:        
+    sleep(randint(1,2))
+    print('clicked')
+    try:
+        print('sad')
         for x in range(1,200):
-            username = webdriver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/article/header/div[2]/div[1]/div[1]/h2/a').text
-            
+            print('inside')
+            username = webdriver.find_element_by_xpath('/html/body/div[3]/div[2]/div/article/header/div[2]/div[1]/div[1]/h2/a').text
+            print(username)
             if username not in prev_user_list:
                 # If we already follow, do not unfollow
-                if webdriver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/article/header/div[2]/div[1]/div[2]/button').text == 'Follow':
+                print('new')
+                if webdriver.find_element_by_xpath('/html/body/div[3]/div[2]/div/article/header/div[2]/div[1]/div[2]/button').text == 'Follow':
                     
-                    webdriver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/article/header/div[2]/div[1]/div[2]/button').click()
+                    webdriver.find_element_by_xpath('/html/body/div[3]/div[2]/div/article/header/div[2]/div[1]/div[2]/button').click()
                     
                     new_followed.append(username)
                     followed += 1
-
+                    print('newliked
+                          ')
                     # Liking the picture
-                    button_like = webdriver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/article/div[2]/section[1]/span[1]/button/span')
-                    
+                    button_like = webdriver.find_element_by_xpath('/html/body/div[3]/div[2]/div/article/div[2]/section[1]/span[1]/button/span')
+    
                     button_like.click()
                     likes += 1
-                    sleep(randint(18,25))
-
+                    sleep(randint(10,15))
+                    print('liked')
                     # Comments and tracker
                     comm_prob = randint(1,10)
                     print('{}_{}: {}'.format(hashtag, x,comm_prob))
